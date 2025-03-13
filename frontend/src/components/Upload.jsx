@@ -34,7 +34,7 @@ const Upload = () => {
 
     try {
       setLoading(true);
-      await axios.post("http://localhost:5000/api/upload", formData);
+      await axios.post("https://qp-jw77.onrender.com/api/upload", formData);
       const newStatus = [...uploadStatus];
       newStatus[index] = true;
       setUploadStatus(newStatus);
@@ -56,7 +56,7 @@ const Upload = () => {
 
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/predict/${subject}`);
+      const response = await axios.get(`https://qp-jw77.onrender.com/api/predict/${subject}`);
       setPredictions(response.data.predictedQuestions);
     } catch (error) {
       console.error("Prediction failed:", error);
